@@ -173,15 +173,23 @@ Write down your guess to the answer before you calculate it.
 I would assume the probability of roll 1 being the square of roll 2 is lower than the absolute value of the difference between roll 1 and roll 2 being 4. For the first scenario, there are two outcomes of thirty six:(1, 1), (2, 4). For the second scenario, there are four outcomes of thirty six: (1, 5), (5, 1), (2, 4), (4, 2).
 
 ```{r simulate_rolls}
-
+roll_results <- tibble(
+  die_1 = replicate(n = 10000, expr = sample(1:6, size = 1)),
+  die_2 = replicate(n = 10000, expr = sample(1:6, size = 1))
+)
 ```
 
 ```{r identify_events}
-
+roll_results <- roll_results %>% 
+  mutate(event_1 = die_1 ^ 2 == die_2,
+         event_2 = abs(die_1 - die_2) == 4)
+roll_results
 ```
 
 ```{r summarize_rolls}
-
+roll_results %>% 
+  summarise(event_1_prob = mean(event_1),
+            event_2_prob = mean(event_2))
 ```
 
 ## Additional Resources-please look at before Weds.
