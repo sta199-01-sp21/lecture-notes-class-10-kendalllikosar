@@ -170,6 +170,8 @@ Perform a simulation to compute this empirical probability.
 
 Write down your guess to the answer before you calculate it.
 
+I would assume the probability of roll 1 being the square of roll 2 is lower than the absolute value of the difference between roll 1 and roll 2 being 4. For the first scenario, there are two outcomes of thirty six:(1, 1), (2, 4). For the second scenario, there are four outcomes of thirty six: (1, 5), (5, 1), (2, 4), (4, 2).
+
 ```{r simulate_rolls}
 
 ```
