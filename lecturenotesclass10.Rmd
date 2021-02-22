@@ -127,6 +127,8 @@ compute this theoretically yet, but this is what computers are good at.
 
 Before we do this, what is your guess as to what the probability will be?
 
+I expect that it will be less than 50/50 chance that you will get the same color twice.
+
 We'll still use `sample()` to run our simulation many times, but we'll
 use `dplyr` functions to compute the relative frequencies.
 
@@ -140,6 +142,8 @@ two_draw_results
 
 How can we add a variable to `two_draw_results` to see if `draw_1` and `draw_2`
 match?
+
+using mutate command and booleans with draw_1 == draw_2
 
 ```{r identify_matches}
 two_draw_results <- two_draw_results %>% 
